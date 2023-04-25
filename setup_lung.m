@@ -2,8 +2,12 @@
 %heterogeneity parameter (0<=beta<=1):
 %beta=0 for homogenous lung
 %beta=1 for no ventilation/perfusion correlation
-beta=0.5
+beta=0.25 % edit for multiple tasks
 %
+% beta is a "heterogeneity parameter" set in the interval [0, 1]
+% beta = 0 is when ventilation-perfusion ratio is constant
+% beta = 1 is when no correlation at all between ventilation and perfusion
+
 %number of iterations used in bisection:
 maxcount=20
 %
@@ -20,7 +24,7 @@ cI=cref
 %
 %blood oxygen concentration
 %at full hemoglobin saturation: 
-cstar=cref
+%cstar=cref
 %cstar=4*(concentration of hemoglobin 
 %in blood expressed in moles/liter)
 %
@@ -63,8 +67,11 @@ av=(a1+a2)/2;
 VA=VAbar*(a1*beta+av*(1-beta));
 Q = Qbar*(a2*beta+av*(1-beta));
 r=VA./Q;
-figure(1)
-plot(Q,VA,'.')
+% figure(1)
+% plot(Q,VA,'.')
+
+% Task 1: ventilation vs. perfusion is plotted on a scatter plot to show
+% the results of random initilization
 
 %find actual values of 
 %VAtotal, Qtotal, VAbar, and Qbar:

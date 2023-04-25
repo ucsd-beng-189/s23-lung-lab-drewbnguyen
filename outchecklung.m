@@ -46,7 +46,7 @@ Pabar=H(cabar)
 PAbar=RT*cAbar
 %
 %oxygen partial pressure in the inspired air:
-PI=RT*cI
+PI=RT*cI %comment for TASK 6
 % 
 %check that partial pressures are in expected order
 if((Pv<Pabar)&(Pabar<=PAbar)&(PAbar<PI))
@@ -86,8 +86,8 @@ u=ones(n,1);
 cblood=[cv*u cabar*u ca];
 cair=  [cI*u cAbar*u cA];
 Pressures=[Pv*u Pabar*u PAbar*u PI*u Pa PA];
-figure(2)
-subplot(2,1,1),plot(r,cblood,'.')
-subplot(2,1,2),plot(r,cair  ,'.')
-figure(3)
-plot(r,Pressures,'.')
+% figure(2)
+% subplot(2,1,1),plot(r,cblood,'.')
+% subplot(2,1,2),plot(r,cair  ,'.')
+% figure(3)
+% plot(r,Pressures,'.')
